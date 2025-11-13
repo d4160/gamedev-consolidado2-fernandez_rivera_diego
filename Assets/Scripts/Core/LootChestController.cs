@@ -6,17 +6,20 @@ using UnityEngine;
 /// </summary>
 public class LootChestController : MonoBehaviour, IInteractable
 {
-    private bool _isOpened = false;
+    public bool IsOpened { get ; private set; }
 
     public void Interact()
     {
-        if (_isOpened)
+        // BUG INTENCIONAL: Ahora solo se puede abrir si el jugador tiene "permiso"
+        // Por ahora, este permiso siempre es falso
+        bool playerHasPermission = false;
+        if (IsOpened || !playerHasPermission)
         {
-            Debug.Log("Este cofre ya ha sido abierto.");
-            return;
+            Debug.Log("Este cofre ya ha sido abierto o no tienes permiso.");
+            return; 
         }
 
-        _isOpened = true;
+        IsOpened = true;
         Debug.Log("¡Has abierto el cofre y encontrado un tesoro!");
     }
 }

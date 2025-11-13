@@ -1,4 +1,8 @@
 ﻿<Solution>
+  <Project Path="Main.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="AAA.Outline.csproj" />
+  <Project Path="PlayMode.csproj" />
+  <Project Path="Tests.csproj" />
 </Solution>
